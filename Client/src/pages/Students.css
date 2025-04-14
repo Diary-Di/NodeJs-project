@@ -1,0 +1,88 @@
+/* src/pages/Students.css */
+
+.students-page {
+    display: flex;
+    flex-direction: column; /* Align the title and form vertically */
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 40px); /* Adjust if header is present */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .page-title {
+    font-size: 30px; /* Bigger font for the title */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px; /* Space between title and form */
+    text-align: center; /* Center-align the title */
+  }
+  
+  .student-form {
+    width: 130%;
+    max-width: 600px; /* Increased size */
+    background-color: white;
+    padding: 40px; /* More padding for spacious form */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Slightly more space between fields */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 8px; /* More space above labels */
+  }
+  
+  .form-group input {
+    padding: 12px; /* More padding inside inputs */
+    font-size: 18px; /* Bigger text inside inputs */
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Slightly rounded inputs */
+  }
+  
+  .valider-btn {
+    padding: 12px 25px; /* Larger button */
+    font-size: 18px; /* Bigger button text */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px; /* Round corners of the button */
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .valider-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .input-error {
+    border: 2px solid red;
+  }
+  
+  .blinking {
+    animation: blink-border 1s ease-in-out infinite;
+  }
+  
+  @keyframes blink-border {
+    0%, 100% {
+      border-color: red;
+    }
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+  
+  
+  

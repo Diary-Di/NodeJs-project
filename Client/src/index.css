@@ -1,0 +1,114 @@
+/* src/styles.css */
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* A more modern font */
+  background-color: #f4f7fb; /* Light background for contrast */
+  color: #333;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  min-height: 100vh;
+}
+
+/* Wrapper for the sidebar and content */
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 150px; /* Slightly wider for a more modern look */
+  background-color: #007bff; /* Blue background */
+  height: 100vh;
+  padding: 20px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: width 0.3s ease; /* Smooth transition when resizing */
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* Adds a more stylish feel */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners for links */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.sidebar ul li a:hover {
+  background-color: #0056b3; /* Slightly darker blue on hover */
+  color: #e1e1e1;
+}
+
+/* Icons */
+.sidebar ul li a svg {
+  margin-right: 12px;
+  transition: transform 0.3s ease; /* Smooth icon animation */
+}
+
+.sidebar ul li a:hover svg {
+  transform: translateX(5px); /* Slightly move icons on hover */
+}
+
+/* Main content styles */
+.content {
+  margin-left: 220px; /* Create space for the sidebar */
+  padding: 20px;
+  flex-grow: 1; /* Ensures content takes full space */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 150px; /* Slightly smaller on mobile */
+    padding: 10px;
+  }
+
+  .sidebar h2 {
+    display: none; /* Hide title on smaller screens */
+  }
+
+  .sidebar ul li a {
+    font-size: 16px;
+    justify-content: center;
+  }
+
+  .content {
+    margin-left: 180px;
+  }
+}

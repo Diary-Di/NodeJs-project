@@ -1,0 +1,186 @@
+/* Page container */
+.list-page {
+  padding: 20px;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Outer container for the table and stats */
+.students-table-container {
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden; /* Hide horizontal scroll */
+}
+
+/* Header table offset for scrollbar sync - Removed margin trick */
+.students-table-container table.students-table:first-of-type {
+  width: 100%; /* Full width */
+}
+
+/* General table styles */
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Column widths */
+.students-table th:nth-child(1),
+.students-table td:nth-child(1) {
+  width: 30%;
+}
+.students-table th:nth-child(2),
+.students-table td:nth-child(2) {
+  width: 30%;
+}
+.students-table th:nth-child(3),
+.students-table td:nth-child(3) {
+  width: 30%;
+}
+.students-table th:nth-child(4),
+.students-table td:nth-child(4) {
+  width: 10%;
+}
+
+/* Table header */
+.students-table thead th {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Remove background from last header column */
+.students-table thead th:last-child {
+  background-color: transparent;
+}
+
+/* Scrollable tbody wrapper */
+.scrollable-tbody {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden; /* Hide horizontal scroll */
+  scrollbar-gutter: stable; /* Keep space for vertical scrollbar */
+}
+
+/* Table cells */
+.students-table td {
+  padding: 12px;
+  text-align: center;
+  background-color: white;
+  border-bottom: none; /* Remove row lines */
+}
+
+/* Zebra striping except for last column */
+.students-table tbody tr:nth-child(odd) td:not(:last-child) {
+  background-color: #f2f2f2;
+}
+.students-table tbody tr:nth-child(even) td:not(:last-child) {
+  background-color: #ffffff;
+}
+
+/* Rounded corners */
+.students-table tbody tr td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.students-table tbody tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Action buttons */
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 5px;
+  position: relative;
+}
+
+.action-btn.edit {
+  color: #007bff;
+}
+
+.action-btn.delete {
+  color: #dc3545;
+}
+
+/* Tooltip on hover */
+.action-btn:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%; /* Default position: below the button */
+  left: 0; /* Align to the left edge of the button */
+  transform: translateX(-110%); /* Move it to the left */
+  background: #333;
+  color: #fff;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10; /* Ensure tooltip appears above other content */
+  pointer-events: none; /* Prevent tooltip from blocking button interactions */
+}
+
+/* For the last row, tooltip appears above the button */
+.students-table tbody tr:last-child .action-btn:hover::after {
+  top: -20px; /* Place tooltip above the button */
+  left: 0; /* Align to the left edge of the button */
+  transform: translateX(-110%); /* Move it to the left */
+}
+
+
+/* Averages section */
+.averages-section {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.average-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.average-field label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.average-field input {
+  padding: 10px;
+  border-radius: 6px;
+  height: 30px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+
+/* Style for the scrollbar */
+.scrollable-tbody::-webkit-scrollbar {
+  width: 8px; /* Reduce the width of the scrollbar */
+}
+
+.scrollable-tbody::-webkit-scrollbar-thumb {
+  background-color: #666565; /* Dark color for the scrollbar thumb */
+  border-radius: 10px;
+}
+
+.scrollable-tbody::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Track background */
+}
